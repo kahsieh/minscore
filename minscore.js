@@ -10,7 +10,7 @@ Copyright (c) 2013-2018 Kevin Hsieh. All Rights Reserved.
 // -----------------------------------------------------------------------------
 
 const app = {
-  version: "v5.0.0",
+  version: "v5.0.1",
   update_api: "https://api.github.com/repos/kahsieh/minscore/releases/latest"
 };
 
@@ -33,7 +33,7 @@ let Gradebook = {
   },
   setCats: function (n) {
     if (n >= 100 && !confirm("Use a large number of categories? This could" +
-        "crash your browser!")) {
+        " crash your browser/computer!")) {
       id("catCount").value = this.visibleCategories();
       return;
     }
@@ -48,8 +48,8 @@ let Gradebook = {
     for (let i = 0; i < this.visibleCategories(); ++i) {
       sum += this.cats[i].wgt;
     }
-    if (auto || Math.abs(sum - 1) > 1e-6 && confirm("Weights do not add up " +
-        "to 100%. Compensate for unentered categories?") ) {
+    if (auto || Math.abs(sum - 1) > 1e-6 && confirm("Weights do not add up" +
+        " to 100%. Compensate for unentered categories?") ) {
       for (let i = 0; i < this.visibleCategories(); ++i) {
         id("Wgt" + i).value /= sum;
       }

@@ -1,6 +1,6 @@
 {
   "name": "minscore",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Determine whether you can bomb your test.",
   "main": "main.js",
   "scripts": {
