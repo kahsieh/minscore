@@ -1,0 +1,28 @@
+{
+  "name": "minscore",
+  "version": "5.0.0",
+  "description": "Determine whether you can bomb your test.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/kahsieh/minscore",
+  "keywords": [
+    "determine",
+    "bomb",
+    "test"
+  ],
+  "homepage": "https://www.kevinhsieh.net",
+  "author": "Kevin Hsieh",
+  "devDependencies": {
+    "electron": "^3.0.7",
+    "electron-builder": "^20.38.2"
+  },
+  "build": {
+    "productName": "MinScore",
+    "appId": "net.kevinhsieh.minscore",
+    "win": {
+      "target": ["portable"]
+    }
+  }
+}

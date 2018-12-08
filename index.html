@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<!--
+MinScore
+index.html
+
+Copyright (c) 2013-2018 Kevin Hsieh. All Rights Reserved.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>MinScore</title>
+<link rel="stylesheet" href="materialize/materialize.css">
+<link rel="stylesheet" href="materialize/icon.css">
+<link rel="stylesheet" href="styles.css">
+<script src="materialize/materialize.js"></script>
+<script src="minscore.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
+});
+</script>
+</head>
+<body>
+<header><nav>
+  <div class="nav-wrapper container"><a href="" class="brand-logo">
+    <i class="material-icons">tune</i>MinScore
+  </a></div>
+</nav></header>
+
+<main class="container">
+  <div id="update-bar" class="row center-align hide"><div class="col s12">
+    An update is available! Click <a id="update-link" target="_blank">here</a>
+    to download it.
+  </div></div>
+  <div class="row">
+    <div class="col s12 l6">
+      <h5>Current Grade</h5>
+      <p>
+        Select the number of weighted categories in your grading scheme, then
+        enter the points you have and points possible for each. Blanks are
+        treated as 0's, and categories with 0 pts/0 max are treated as no
+        credit. To automatically adjust the other categories to compensate,
+        either leave the category out or enter 0 as the weight.
+      </p>
+      <div class="row"><div class="col s12 input-field">
+        <input type="number" class="validate" value="1" min="1" id="catCount"
+          onChange="Gradebook.setCats(this.value)" />
+        <label for="catCount">Categories</label>
+      </div></div>
+      <table>
+        <thead><tr>
+          <th>Cat</th>
+          <th>Wgt (%)</th>
+          <th>Pts</th>
+          <th>Max</th>
+        </tr></thead>
+        <tbody id="GradeTable"></tbody>
+      </table>
+      <br>
+    </div>
+    <div class="col s12 l6">
+      <h5>Test/Assignment Details</h5>
+      <p>
+        Enter details about the test/assignment to optimize on. Please make
+        sure you select the correct category, and remember to round up the
+        minimum score if it's not possible to score partial points. If there
+        are grades that are not yet factored into your current grade, the
+        number of points you will need to score may change.
+      </p>
+      <div class="row"><div class="col s12 input-field">
+        <input type="number" class="validate" min="1" id="testValue" />
+        <label for="testValue">Point value</label>
+      </div></div>
+      <div class="row"><div class="col s12 input-field">
+        <input type="number" class="validate" min="1" id="testCat" />
+        <label for="testCat">Category</label>
+      </div></div>
+      <div class="row"><div class="col s12 input-field">
+        <input type="number" class="validate" id="desiredGrade" />
+        <label for="desiredGrade">Target grade (%)</label>
+      </div></div>
+      <div class="row"><div class="col s12 center-align">
+        <button class="btn waves-effect waves-light" onClick="main()">
+          <i class="material-icons left">flag</i>Calculate</button>
+      </div></div>
+      <p>
+        Alternatively, you can generate a standard table:
+      </p>
+      <div class="row"><div class="col s12 center-align">
+        <button class="btn waves-effect waves-light"
+          onClick="table([79.5, 82.5, 87.5, 89.5, 92.5, 97.5])">
+          <i class="material-icons left">radio_button_unchecked</i>
+          With rounding</button>
+        <button class="btn waves-effect waves-light"
+          onClick="table([80.0, 82.5, 87.5, 90.0, 92.5, 97.5])">
+          <i class="material-icons left">change_history</i>
+          No rounding</button>
+      </div></div>
+    </div>
+  </div>
+</main>
+
+<footer class="page-footer grey lighten-3 black-text"><div class="container">
+  <a target="_blank" href="https://github.com/kahsieh/minscore">MinScore</a>
+  <span id="app-version"></span>
+  Copyright © 2013–2018
+  <a target="_blank" href="https://www.kevinhsieh.net">Kevin Hsieh</a>.
+  All Rights Reserved.
+</div></footer>
+</body>
+</html>
