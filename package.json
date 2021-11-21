@@ -1,6 +1,6 @@
 {
   "name": "minscore",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Determine whether you can bomb your test.",
   "main": "main.js",
   "scripts": {
@@ -15,8 +15,8 @@
   "homepage": "https://www.kevinhsieh.net",
   "author": "Kevin Hsieh",
   "devDependencies": {
-    "electron": "^9.1.0",
-    "electron-builder": "^22.7.0"
+    "electron": "^16.0.1",
+    "electron-builder": "^22.14.5"
   },
   "build": {
     "productName": "MinScore",

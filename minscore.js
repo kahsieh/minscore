@@ -2,7 +2,7 @@
 MinScore
 minscore.js
 
-Copyright (c) 2013-2020 Kevin Hsieh. All Rights Reserved.
+Copyright (c) 2013-2021 Kevin Hsieh. All Rights Reserved.
 */
 
 // -----------------------------------------------------------------------------
@@ -10,7 +10,7 @@ Copyright (c) 2013-2020 Kevin Hsieh. All Rights Reserved.
 // -----------------------------------------------------------------------------
 
 const app = {
-  version: "v5.0.2",
+  version: "v5.0.3",
   update_api: "https://api.github.com/repos/kahsieh/minscore/releases/latest"
 };
 
@@ -170,7 +170,7 @@ function table(targets) {
       return;
     }
     ret += `${desiredGrade.toFixed(1)}%` +
-        `\t${round(results[0], 2)}/${round(results[1], 2)}` +
+        `    ${round(results[0], 2)}/${round(results[1], 2)}` +
         ` (${round(results[2], 2)}%)\n`;
   }
   alert(ret);
